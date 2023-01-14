@@ -19,7 +19,7 @@ RSpec.describe RecipeService do
         recipes = RecipeService.country_recipes('Cuba')
 
         expect(recipes[:hits]).to be_a Array
-        expect(recipes[:hits][0][:recipe][:uri]).to be_a String
+        expect(recipes[:hits][0][:recipe][:url]).to be_a String
         expect(recipes[:hits][0][:recipe][:image]).to be_a String
         expect(recipes[:hits][0][:recipe][:label]).to be_a String
       end

@@ -5,7 +5,7 @@ class Recipe
               :country
   def initialize(recipe_data, country)
     @title = recipe_data[:recipe][:label]
-    @url = recipe_data[:recipe][:uri]
+    @url = recipe_data[:recipe][:url]
     @image_url = recipe_data[:recipe][:image]
     @country = country
   end
