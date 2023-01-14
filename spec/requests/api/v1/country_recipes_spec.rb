@@ -41,4 +41,28 @@ RSpec.describe 'Country Recipes Request' do
     expect(recipes[:data][0][:attributes][:image]).to be_a String
     expect(recipes[:data][0][:attributes].keys.size).to eq(4)
   end
+
+  it 'if an empty string is provided for the country, an empty array is
+  returned' do
+    VCR.use_cassette('recipes_empty_country') do
+      get '/api/v1/recipes?country='
+    end
+
+    expect(response).to be_successful
+    recipes = JSON.parse(response.body, symbolize_names:true)
+
+    expect(recipes).to eq({data: []})
+  end
+
+  it 'if the recipes does not return any results, an empty array is
+  returned' do
+    VCR.use_cassette('recipes_made-up_country') do
+      get '/api/v1/recipes?country=Aslandia'
+    end
+
+    expect(response).to be_successful
+    recipes = JSON.parse(response.body, symbolize_names:true)
+
+    expect(recipes).to eq({data: []})
+  end
 end
