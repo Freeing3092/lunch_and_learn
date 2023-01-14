@@ -1,12 +1,12 @@
 class Recipe
   attr_reader :title,
               :url,
-              :image_url,
+              :image,
               :country
   def initialize(recipe_data, country)
     @title = recipe_data[:recipe][:label]
     @url = recipe_data[:recipe][:url]
-    @image_url = recipe_data[:recipe][:image]
+    @image = recipe_data[:recipe][:image]
     @country = country
   end
 end

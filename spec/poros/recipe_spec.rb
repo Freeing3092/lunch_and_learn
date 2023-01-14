@@ -14,7 +14,7 @@ RSpec.describe Recipe do
 
       expect(recipe.title).to eq(recipe_data[:recipe][:label])
       expect(recipe.url).to eq(recipe_data[:recipe][:url])
-      expect(recipe.image_url).to eq(recipe_data[:recipe][:image])
+      expect(recipe.image).to eq(recipe_data[:recipe][:image])
       expect(recipe.country).to eq('Germany')
     end
   end
