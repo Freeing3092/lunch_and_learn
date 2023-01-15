@@ -9,6 +9,8 @@ RSpec.describe ImagesFacade do
           images.each do |image|
             expect(image).to be_a Image
           end
+
+          expect(images.size).to eq(10)
         end
       end
     end
