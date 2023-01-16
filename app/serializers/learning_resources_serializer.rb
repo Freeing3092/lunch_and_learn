@@ -16,8 +16,22 @@ class LearningResourcesSerializer
               url: image.url
             }
           end
-          }
         }
       }
+    }
+  end
+
+  def self.null_response(country)
+    {
+      data: {
+        id: 'null',
+        type: 'learning_resource',
+        attributes: {
+          country: country,
+          video: {},
+          images: []
+        }
+      }
+    }
   end
 end

@@ -3,8 +3,13 @@ class ImagesFacade
     images_json = FlickrService.images(query)
 
     photos = images_json[:photos][:photo]
-    photos.first(10).map do |photo_data|
-      Image.new(photo_data)
+
+    if photos.empty?
+      nil
+    else
+      photos.first(10).map do |photo_data|
+        Image.new(photo_data)
+      end
     end
   end
 end

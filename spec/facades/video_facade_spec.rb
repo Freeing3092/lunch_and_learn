@@ -10,6 +10,14 @@ RSpec.describe VideoFacade do
           expect(video).to be_a Video
         end
       end
+
+      it 'returns nil if no video results are found' do
+        VCR.use_cassette('video_Aslandia') do
+          video = VideoFacade.video('Aslandia')
+
+          expect(video).to eq(nil)
+        end
+      end
     end
   end
 end

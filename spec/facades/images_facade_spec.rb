@@ -13,6 +13,15 @@ RSpec.describe ImagesFacade do
           expect(images.size).to eq(10)
         end
       end
+
+
+      it 'returns nil if no images are found' do
+        VCR.use_cassette('images_gibberish') do
+          recipes = ImagesFacade.images('Aslandiaahneubnga')
+
+          expect(recipes).to eq(nil)
+        end
+      end
     end
   end
 end

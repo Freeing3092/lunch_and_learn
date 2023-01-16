@@ -2,6 +2,10 @@ class VideoFacade
   def self.video(query)
     videos_json = YoutubeService.search_list(query)
 
-    Video.new(videos_json[:items].first)
+    if videos_json[:items].empty?
+      nil
+    else
+      Video.new(videos_json[:items].first)
+    end
   end
 end
