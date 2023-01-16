@@ -69,5 +69,7 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.filter_sensitive_data('<edamam_api_key>') { ENV['edamam_api_key'] }
   c.filter_sensitive_data('<edamam_app_id>') { ENV['edamam_app_id'] }
+  c.filter_sensitive_data('<flickr_api_key>') { ENV['flickr_api_key'] }
+  c.filter_sensitive_data('<google_api_key>') { ENV['google_api_key'] }
   c.allow_http_connections_when_no_cassette = true
 end
