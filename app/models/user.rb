@@ -4,4 +4,6 @@ class User < ApplicationRecord
                         :api_key
 
   validates_uniqueness_of :email
+
+  has_many :favorites
 end
