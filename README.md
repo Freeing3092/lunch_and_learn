@@ -65,7 +65,7 @@ This app makes use of 4 external APIs; API keys can be acquired for free by sign
 
 <details>
   <summary> Get Learning Resources for a Particular Country </summary><br>
-  - GET "/api/v1/learning_resources"<br>
+  - GET "/api/v1/learning_resources?country=Canada"<br>
   - Sample response body:<br>
 
   ```
