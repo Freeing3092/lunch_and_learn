@@ -11,6 +11,16 @@ class Api::V1::FavoritesController < ApplicationController
     end
   end
 
+def index
+  user = User.find_by(api_key: params[:api_key])
+  if user.nil?
+    render json: {error: 'No user found with the provided api_key'}, status: 404
+  else
+    favorites = user.favorites
+    render json: FavoriteSerializer.new(favorites).to_json, status: 200
+  end
+end
+
   private
 
   def favorites_params
