@@ -44,8 +44,9 @@ This app makes use of 4 external APIs; API keys can be acquired for free by sign
   <summary> Get Recipes For A Particular Country </summary><br>
   - GET "/api/v1/recipes?country=Canada"<br>
   - Sample response body:<br>
-  ```
-  {
+
+```
+{
     "data": [
         {
             "id": "null",
@@ -66,6 +67,7 @@ This app makes use of 4 external APIs; API keys can be acquired for free by sign
   <summary> Get Learning Resources for a Particular Country </summary><br>
   - GET "/api/v1/learning_resources"<br>
   - Sample response body:<br>
+
   ```
 {
     "data": {
@@ -83,7 +85,8 @@ This app makes use of 4 external APIs; API keys can be acquired for free by sign
                     "url": "https://live.staticflickr.com/65535/52631822059_b661659d64_b.jpg"
                 },...
             ]
-      }
+        }
+    }
 }
 ```
 </details>
@@ -92,7 +95,8 @@ This app makes use of 4 external APIs; API keys can be acquired for free by sign
   <summary> User Registration </summary><br>
   - POST "/api/v1/users"<br>
   - Sample request body:<br>
-  ```
+
+```
 {
   "name": "Athena Dao",
   "email": "athenadao@bestgirlever.com"
@@ -100,7 +104,8 @@ This app makes use of 4 external APIs; API keys can be acquired for free by sign
 ```
 <br>
   - Sample response body:<br>
-  ```
+
+```
 {
     "data": {
         "id": "1",
@@ -119,7 +124,8 @@ This app makes use of 4 external APIs; API keys can be acquired for free by sign
   <summary> Add Favorites </summary><br>
   - POST "/api/v1/favorites"<br>
   - Sample request body:<br>
-  ```
+
+```
 {
     "api_key": "IqHVnRrBJRB-rEvJqDrbjw",
     "country": "poland",
@@ -129,7 +135,8 @@ This app makes use of 4 external APIs; API keys can be acquired for free by sign
 ```
 <br>
   - Sample response body:<br>
-  ```
+
+```
 {
     "success": "Favorite added successfully"
 }
@@ -141,7 +148,8 @@ This app makes use of 4 external APIs; API keys can be acquired for free by sign
   - GET "/api/v1/favorites?api_key=IqHVnRrBJRB-rEvJqDrbjw"<br>
 <br>
   - Sample response body:<br>
-  ```
+
+```
 {
     "data": [
         {
